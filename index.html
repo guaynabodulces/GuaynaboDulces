@@ -61,17 +61,66 @@
       transform: translateY(0);
       filter: brightness(0.97);
     }
+
+    /* ===== Mobile dropdown animation (fade + slide) ===== */
+  #mobileMenu {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height 280ms ease, opacity 200ms ease, transform 220ms ease;
+    pointer-events: none;
+  }
+  #mobileMenu.is-open {
+    max-height: 500px; /* suficiente para tus links */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* ===== Blur overlay behind menu ===== */
+  #menuOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+    z-index: 40;
+  }
+  #menuOverlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Ensure header/nav stay above overlay */
+  header { position: relative; z-index: 50; }
   </style>
 </head>
 
 <body class="font-sans">
+<div id="menuOverlay" class="md:hidden"></div>
+
   <!-- Header --> 
   <header style="background-color: rgb(255, 255, 255);" class="p-4 shadow-md"> 
   <div class="flex flex-col md:flex-row items-center md:justify-start gap-6 max-w-6xl mx-auto">
   <img src="/LogoGuaynaboDulces_clear.png" alt="Guaynabo Dulces Logo" class="h-36 w-auto object-contain" /> 
-    <nav> <ul class="flex flex-wrap justify-center space-x-6 text-lg font-semibold"> 
-     <li><a href="#inicio">Inicio</a></li>
-      </nav> 
+  <div id="mobileMenu" class="md:hidden mt-3 bg-white rounded-lg shadow-md p-3">
+
+  <nav>
+  <ul class="flex flex-wrap justify-center md:justify-start gap-3 text-lg font-semibold">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#dulces">Dulces</a></li>
+    <li><a href="#plasticos">Plásticos</a></li>
+    <li><a href="#decoraciones">Decoraciones</a></li>
+    <li><a href="#arreglos">Arreglos</a></li>
+    <li><a href="#cake-toppers">Cake Toppers</a></li>
+    <li><a href="#centros-mesa">Centros de Mesa</a></li>
+  </ul>
+</nav>
+
   </div>
   </header> 
   
@@ -95,7 +144,7 @@
       </section>
 
       <!-- Plásticos -->
-      <section id="ordenes" class="mt-8">
+      <section id="plasticos" class="mt-8">
         <h1>Plásticos/Compostables</h1>
 
         <h4>Bandejas y moldes de aluminio, vasos de plástico, foam y cartón, copas acrílicas, platos, cubiertos, bolsas de papel y envases de plastico, foam y compostables.</h4>
@@ -111,14 +160,14 @@
       </section>
 
       <!-- Decoraciones -->
-      <section id="historia" class="mt-8">
+      <section id="decoraciones" class="mt-8">
         <h1>Decoraciones</h1>
 
         <h4>Decoraciones para cumpleaños, gender reveals, celebraciones y días festivos.</h4>
         <h1>Decoraciones Personalizadas</h1>
 
         <h4>Arreglo Globos</h4>
-        <div class="relative w-full max-w-3xl mx-auto">
+        <div id="" class="relative w-full max-w-3xl mx-auto">
           <img id="arreglogloboImage" src="/arregloglobo1.JPG.jpg" alt="Arreglo Globos"
                class="w-full h-96 object-contain img-frame shadow-lg" />
           <button id="arreglogloboPrev"
@@ -542,5 +591,49 @@
       update(); startAutoPlay();
     })();
   </script>
+  <script>
+  (function () {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+    const overlay = document.getElementById("menuOverlay");
+    if (!btn || !menu || !overlay) return;
+
+    function isOpen() {
+      return menu.classList.contains("is-open");
+    }
+
+    function openMenu() {
+      menu.classList.add("is-open");
+      overlay.classList.add("is-open");
+      btn.textContent = "✕ Cerrar";
+      document.documentElement.style.overflow = "hidden"; // lock scroll
+    }
+
+    function closeMenu() {
+      menu.classList.remove("is-open");
+      overlay.classList.remove("is-open");
+      btn.textContent = "☰ Menú";
+      document.documentElement.style.overflow = ""; // unlock scroll
+    }
+
+    btn.addEventListener("click", () => {
+      isOpen() ? closeMenu() : openMenu();
+    });
+
+    // Cerrar al tocar overlay
+    overlay.addEventListener("click", closeMenu);
+
+    // Cerrar al tocar un link
+    menu.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", closeMenu);
+    });
+
+    // Cerrar con ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isOpen()) closeMenu();
+    });
+  })();
+</script>
+
 </body>
 </html>
