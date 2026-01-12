@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guaynabo Dulces</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    h1 {
+      font-size: 1.875rem;
+      font-weight: bold;
+      color: rgb(250, 204, 21);
+      margin-bottom: 1rem;
+      border-bottom: 4px solid rgb(250, 204, 21);
+      padding-bottom: 0.5rem;
+      background-color: rgb(0, 92, 185);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      border-radius: 0.25rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: rgb(193, 154, 49);
+      margin-bottom: 0.75rem;
+      text-align: center;
+      background-color: whithe;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: rgb(0, 92, 185);
+      margin-bottom: 0.75rem;
+      background-color: white;
+      padding: 0.25rem 0.5rem;
+      border-left: 4px solid rgb(250, 204, 21);
+      border-radius: 0.25rem;
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.25rem; }
+      h4 { font-size: 1.125rem; }
+    }
+    nav ul li a {
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: .25s ease, color .25s ease, transform .15s ease;
+      background-color: rgba(248, 187, 24);
+      color: rgb(0, 92, 185);
+      display: inline-block;
+    }
+    nav ul li a:hover {
+      background-color:rgb(0, 92, 185);
+      color: rgb(1, 39, 76);
+      transform: translateY(-1px);
+    }
+    nav ul li a:active {
+      transform: translateY(0);
+      filter: brightness(0.97);
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- Header --> 
+  <header style="background-color: rgb(255, 255, 255);" class="p-4 shadow-md"> 
+  <div class="flex flex-col md:flex-row items-center md:justify-center gap-6 max-w-6xl mx-auto"> 
+    <img src="/LogoGuaynaboDulces_clear.png" alt="Guaynabo Dulces Logo" class="h-36 w-auto object-contain" /> 
+    <nav> <ul class="flex flex-wrap justify-center space-x-6 text-lg font-semibold"> 
+     <li><a href="#inicio">Inicio</a></li>
+     <li><a href="">Ordenar Globos</a></li> 
+     <li><a href="">Nuestra historia</a></li> </ul> </nav> 
+  </div>
+  </header> 
+  
+  <!-- Main --> 
+  <main class="p-6 max-w-6xl mx-auto"> 
+  <div id="inicio"> <h2 class="font-bold mt-6">Desde 1992 brindándote todo lo que necesitas para tu fiesta</h2>
+    <!-- Dulces -->
+      <section id="dulces" class="mt-6">
+        <h1>Dulces</h1>
+
+        <h4>Variedad: bombones, chocolates, chicles, galletas, gomitas, paletas y más.</h4>
+        <div class="relative w-full max-w-3xl mx-auto">
+          <img id="dulcesImage" src="/dulces.jpg" alt="Dulces"
+               class="w-full h-96 object-contain img-frame shadow-lg" />
+          <button id="dulcesPrev"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">◀</button>
+          <button id="dulcesNext"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">▶</button>
+          <div id="dulcesDots" class="absolute bottom-2 inset-x-0 flex justify-center gap-2"></div>
+        </div>
+      </section>
+
+      <!-- Plásticos -->
+      <section id="ordenes" class="mt-8">
+        <h1>Plásticos/Compostables</h1>
+
+        <h4>Catálogo de vasos, utensilios y envases.</h4>
+        <div class="relative w-full max-w-3xl mx-auto">
+          <img id="plasticosImage" src="/plasticos.jpg" alt="Plásticos"
+               class="w-full h-96 object-contain img-frame shadow-lg" />
+          <button id="plasticosPrev"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">◀</button>
+          <button id="plasticosNext"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">▶</button>
+          <div id="plasticosDots" class="absolute bottom-2 inset-x-0 flex justify-center gap-2"></div>
+        </div>
+      </section>
+
+      <!-- Decoraciones -->
+      <section id="historia" class="mt-8">
+        <h1>Decoraciones</h1>
+
+        <h4>Decoraciones para cumpleaños, gender reveals, celebraciones y días festivos.</h4>
+        <h1>Decoraciones Personalizadas</h1>
+
+        <h4>Arreglo Globos</h4>
+        <div class="relative w-full max-w-3xl mx-auto">
+          <img id="arreglogloboImage" src="/arregloglobo1.JPG.jpg" alt="Arreglo Globos"
+               class="w-full h-96 object-contain img-frame shadow-lg" />
+          <button id="arreglogloboPrev"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">◀</button>
+          <button id="arreglogloboNext"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">▶</button>
+          <div id="arreglogloboDots" class="absolute bottom-2 inset-x-0 flex justify-center gap-2"></div><br>
+        </div>
+
+        <h4>Cake Toppers</h4>
+        <div class="relative w-full max-w-3xl mx-auto">
+          <img id="caketopperImage" src="/caketopper1.JPG.jpg" alt="Cake Topper"
+               class="w-full h-96 object-contain img-frame shadow-lg" />
+          <button id="caketopperPrev"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">◀</button>
+          <button id="caketopperNext"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">▶</button>
+          <div id="caketopperDots" class="absolute bottom-2 inset-x-0 flex justify-center gap-2"></div><br>
+        </div>
+
+        <h4>Centros de Mesa</h4>
+        <div class="relative w-full max-w-3xl mx-auto">
+          <img id="centrodemesaImage" src="/centrodemesa1.JPG" alt="Centro de Mesa"
+               class="w-full h-96 object-contain img-frame shadow-lg" />
+          <button id="centrodemesaPrev"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">◀</button>
+          <button id="centrodemesaNext"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">▶</button>
+          <div id="centrodemesaDots" class="absolute bottom-2 inset-x-0 flex justify-center gap-2"></div><br>
+        </div>
+
+        <h1>Colaboraciones</h1>
+        <div class="relative w-full max-w-3xl mx-auto">
+          <img id="apariciontvImage" src="/apariciontv1.JPG" alt="Apariciones en TV"
+               class="w-full h-96 object-contain img-frame shadow-lg" />
+          <button id="apariciontvPrev"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">◀</button>
+          <button id="apariciontvNext"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 btn-dark text-white rounded-full p-2 shadow">▶</button>
+          <div id="apariciontvDots" class="absolute bottom-2 inset-x-0 flex justify-center gap-2"></div><br>
+        </div>
+
+      </section>
+
+      <!-- Dirección -->
+      <section class="mt-8">
+        <h1>Dirección</h1>
+
+        <h4>138 Calle Carazo, Guaynabo, Puerto Rico 00969</h4>
+        <a href="https://maps.apple/p/T9seIk_kn2NMG0">📍Apple Maps</a><br>
+        <a href="https://maps.app.goo.gl/RtFHjw6tujSwFKX16?g_st=ipc">📍Google Maps</a><br>
+        <a href="https://waze.com/ul/hde2brt5m0">📍Waze</a><br>
+
+        <h4>D17 Cll 28, Bayamón, 00957, Puerto Rico</h4>
+        <a href="https://maps.apple/p/_jaXyAYgB~u_eV">📍Apple Maps</a><br>
+        <a href="https://maps.app.goo.gl/7kV9WSo6QFAM3nY27?g_st=ipc">📍Google Maps</a><br>
+        <a href="https://waze.com/ul/hde2bqr2qm">📍Waze</a>
+      </section>
+
+      <!-- Contacto + Horario -->
+      <section class="mt-4">
+        <h4>Contáctanos</h4>
+
+        <h3>Guaynabo</h3>
+        <ul style="color: #f01616;">787-708-4979</ul>
+        <ul style="color: #f01616;">787-272-3462</ul>
+       
+        <h3>Bayamón</h3>
+        <ul style="color: #f01616;">787-799-0425</ul>
+        
+        <h1>Horario</h1>
+        <div id="store-status" class="card"></div>
+        <h4>Guaynabo: 8:00 - 5:00</h4>
+        <h4>Bayamón: 9:00 - 5:00</h4>
+        <h5>Lunes a Sábado</h5>
+        <h5>Domingo cerrado</h5>
+
+
+        <script>
+          // === Configuration ===
+          const TIME_ZONE = "America/Puerto_Rico";
+          const FALLBACK_TZ = "America/New_York";
+
+          const WEEKLY_HOURS = {
+            0: null,
+            1: { open: {h:8, m:0}, close: {h:17, m:0} },
+            2: { open: {h:8, m:0}, close: {h:17, m:0} },
+            3: { open: {h:8, m:0}, close: {h:17, m:0} },
+            4: { open: {h:8, m:0}, close: {h:17, m:0} },
+            5: { open: {h:8, m:0}, close: {h:17, m:0} },
+            6: { open: {h:8, m:0}, close: {h:17, m:0} },
+          };
+
+          function nowInTZ(tzPreferred, tzFallback) {
+            const tz = supportsTZ(tzPreferred) ? tzPreferred : tzFallback;
+            const fmt = new Intl.DateTimeFormat('en-US', {
+              timeZone: tz,
+              year:'numeric', month:'2-digit', day:'2-digit',
+              hour:'2-digit', minute:'2-digit', second:'2-digit',
+              hour12:false
+            });
+            const parts = Object.fromEntries(fmt.formatToParts(new Date()).map(p => [p.type, p.value]));
+            const y = +parts.year, m = +parts.month, d = +parts.day,
+                  hh = +parts.hour, mm = +parts.minute, ss = +parts.second;
+            const date = new Date(Date.UTC(y, m-1, d, hh, mm, ss));
+            return { tz, y, m, d, hh, mm, ss, date };
+          }
+          function supportsTZ(tz) {
+            try { new Intl.DateTimeFormat('en-US', { timeZone: tz }).format(0); return true; }
+            catch { return false; }
+          }
+          function makeZonedDate(y, m, d, hh=0, mm=0, ss=0) {
+            return new Date(Date.UTC(y, m-1, d, hh, mm, ss));
+          }
+          function fmtTime(h, m) {
+            const pad = n => n.toString().padStart(2,'0');
+            const hour12 = ((h + 11) % 12) + 1;
+            const ampm = h < 12 ? 'AM' : 'PM';
+            return `${hour12}:${pad(m)} ${ampm}`;
+          }
+          const pad2 = n => n.toString().padStart(2,'0');
+          function ymdStr(y, m, d) { return `${y}-${pad2(m)}-${pad2(d)}`; }
+          function zonedWeekday(date) { return date.getUTCDay(); }
+
+          function thanksgiving(y) {
+            const first = makeZonedDate(y, 11, 1, 12);
+            const w = zonedWeekday(first);
+            const offsetToThu = (4 - w + 7) % 7;
+            const day = 1 + offsetToThu + 7*3;
+            return { y, m:11, d:day, name:"Thanksgiving" };
+          }
+          function goodFriday(y) {
+            const a = y % 19, b = Math.floor(y / 100), c = y % 100;
+            const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
+            const g = Math.floor((b - f + 1) / 3);
+            const h = (19 * a + b - d - g + 15) % 30;
+            const i = Math.floor(c / 4), k = c % 4;
+            const l = (32 + 2*e + 2*i - h - k) % 7;
+            const m = Math.floor((a + 11*h + 22*l) / 451);
+            const month = Math.floor((h + l - 7*m + 114) / 31);
+            const day   = ((h + l - 7*m + 114) % 31) + 1;
+            const easter = makeZonedDate(y, month, day, 12);
+            const gf = new Date(easter.getTime() - 2*24*60*60*1000);
+            return { y: gf.getUTCFullYear(), m: gf.getUTCMonth()+1, d: gf.getUTCDate(), name:"Good Friday (Viernes Santo)" };
+          }
+          function holidaysForYear(y) {
+            return [
+              { y, m:1,  d:1,  name:"New Year's Day" },
+              { y, m:1,  d:6,  name:"Three Kings Day" },
+              { y, m:7,  d:4,  name:"Independence Day" },
+              { y, m:7,  d:25, name:"Constitution Day" },
+              { y, m:12, d:25, name:"Christmas Day" },
+              thanksgiving(y),
+              goodFriday(y),
+            ];
+          }
+          function holidayNameOn(y, m, d) {
+            const key = ymdStr(y,m,d);
+            const list = holidaysForYear(y);
+            for (const h of list) { if (ymdStr(h.y, h.m, h.d) === key) return h.name; }
+            return null;
+          }
+          function isOpenAt(nowZ, hoursForDay) {
+            if (!hoursForDay) return { open:false };
+            const y = nowZ.getUTCFullYear(), m = nowZ.getUTCMonth()+1, d = nowZ.getUTCDate();
+            const openAt  = makeZonedDate(y, m, d, hoursForDay.open.h,  hoursForDay.open.m);
+            const closeAt = makeZonedDate(y, m, d, hoursForDay.close.h, hoursForDay.close.m);
+            const open = nowZ >= openAt && nowZ < closeAt;
+            return { open, openAt, closeAt };
+          }
+          function render() {
+            const nowInfo = nowInTZ(TIME_ZONE, FALLBACK_TZ);
+            const nowZ = nowInfo.date;
+            const y = nowInfo.y, m = nowInfo.m, d = nowInfo.d;
+            const w = zonedWeekday(nowZ);
+            const holiday = holidayNameOn(y, m, d);
+            const hoursToday = holiday ? null : WEEKLY_HOURS[w] || null;
+            const status = isOpenAt(nowZ, hoursToday);
+
+            const el = document.getElementById('store-status');
+            if (!el) return;
+
+            const localTimeStr = new Intl.DateTimeFormat('en-US', {
+              timeZone: nowInfo.tz, weekday:'long', month:'short', day:'numeric',
+              hour:'numeric', minute:'2-digit'
+            }).format(new Date());
+
+            let line1 = status.open ? "We are OPEN 🟢 " : "We are CLOSED 🔴 ";
+            let line2 = `Local time: ${localTimeStr} (${nowInfo.tz})`;
+            let line3 = "";
+
+            if (holiday) {
+              line3 = `Holiday: ${holiday}`;
+            } else if (status.open) {
+              line3 = `Today’s hours: ${WEEKLY_HOURS[w] ? (WEEKLY_HOURS[w].open ?
+                ( (() => { const o=WEEKLY_HOURS[w].open, c=WEEKLY_HOURS[w].close;
+                          const pad=n=>n.toString().padStart(2,'0');
+                          const h12=h=>((h+11)%12)+1, ap=h=>h<12?'AM':'PM';
+                          return `${h12(o.h)}:${pad(o.m)} ${ap(o.h)}–${h12(c.h)}:${pad(c.m)} ${ap(c.h)}`; })() ) : "" ) : ""}`;
+            } else {
+              line3 = "Closed for the day.";
+            }
+
+            el.innerHTML = `
+              <strong class="${status.open ? 'open' : 'closed'}" style="font-size:1.1rem;">${line1}</strong>
+              <div>${line2}</div>
+              <div>${line3}</div>
+            `;
+          }
+          render();
+          setInterval(render, 60_000);
+        </script>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer --> 
+  <footer style="background-color: rgb(0, 92, 185);" class="text-center p-6 mt-10 text-sm text-gray-700"> 
+    <p>&copy; 2026 Guaynabo Dulces. Todos los derechos reservados.</p> <p class="mt-2">¿Tienes preguntas? Escríbenos a: 
+    <a href="mailto:info@guaynabodulces.com" class="underline">info@guaynabodulces.com</a> </p> </footer>
+  <!-- Carousel scripts (unchanged) -->
+  <script>
+    (function () {
+      const images = ["/dulces.jpg","/dulces2.jpg","/dulces4.jpg"];
+      let i = 0, intervalId;
+      const imgEl = document.getElementById("dulcesImage");
+      const prev = document.getElementById("dulcesPrev");
+      const next = document.getElementById("dulcesNext");
+      const dots = document.getElementById("dulcesDots");
+
+      function renderDots() {
+        dots.innerHTML = "";
+        images.forEach((_, idx) => {
+          const b = document.createElement("button");
+          b.className = "h-2.5 w-2.5 rounded-full bg-white/80 hover:bg-white " + (idx === i ? "scale-110" : "opacity-60");
+          b.onclick = () => { i = idx; update(); };
+          dots.appendChild(b);
+        });
+      }
+      function update() { imgEl.src = images[i]; renderDots(); }
+      function nextImg() { i = (i + 1) % images.length; update(); }
+      function prevImg() { i = (i - 1 + images.length) % images.length; update(); }
+      function startAutoPlay() { intervalId = setInterval(nextImg, 4000); }
+      function stopAutoPlay() { clearInterval(intervalId); }
+
+      next.onclick = nextImg;
+      prev.onclick = prevImg;
+      imgEl.onmouseenter = stopAutoPlay;
+      imgEl.onmouseleave = startAutoPlay;
+
+      update(); startAutoPlay();
+    })();
+
+    (function () {
+      const images = ["/plasticos.jpg","/plasticos2.jpg","/plasticos3.jpg"];
+      let i = 0, intervalId;
+      const imgEl = document.getElementById("plasticosImage");
+      const prev = document.getElementById("plasticosPrev");
+      const next = document.getElementById("plasticosNext");
+      const dots = document.getElementById("plasticosDots");
+
+      function renderDots() {
+        dots.innerHTML = "";
+        images.forEach((_, idx) => {
+          const b = document.createElement("button");
+          b.className = "h-2.5 w-2.5 rounded-full bg-white/80 hover:bg-white " + (idx === i ? "scale-110" : "opacity-60");
+          b.onclick = () => { i = idx; update(); };
+          dots.appendChild(b);
+        });
+      }
+      function update() { imgEl.src = images[i]; renderDots(); }
+      function nextImg() { i = (i + 1) % images.length; update(); }
+      function prevImg() { i = (i - 1 + images.length) % images.length; update(); }
+      function startAutoPlay() { intervalId = setInterval(nextImg, 4000); }
+      function stopAutoPlay() { clearInterval(intervalId); }
+
+      next.onclick = nextImg;
+      prev.onclick = prevImg;
+      imgEl.onmouseenter = stopAutoPlay;
+      imgEl.onmouseleave = startAutoPlay;
+
+      update(); startAutoPlay();
+    })();
+
+    (function () {
+      const images = ["/caketopper1.JPG","/caketopper2.JPG","/caketopper3.JPG","caketopper4.JPG","caketopper5.jpg"];
+      let i = 0, intervalId;
+      const imgEl = document.getElementById("caketopperImage");
+      const prev = document.getElementById("caketopperPrev");
+      const next = document.getElementById("caketopperNext");
+      const dots = document.getElementById("caketopperDots");
+
+      function renderDots() {
+        dots.innerHTML = "";
+        images.forEach((_, idx) => {
+          const b = document.createElement("button");
+          b.className = "h-2.5 w-2.5 rounded-full bg-white/80 hover:bg-white " + (idx === i ? "scale-110" : "opacity-60");
+          b.onclick = () => { i = idx; update(); };
+          dots.appendChild(b);
+        });
+      }
+      function update() { imgEl.src = images[i]; renderDots(); }
+      function nextImg() { i = (i + 1) % images.length; update(); }
+      function prevImg() { i = (i - 1 + images.length) % images.length; update(); }
+      function startAutoPlay() { intervalId = setInterval(nextImg, 4000); }
+      function stopAutoPlay() { clearInterval(intervalId); }
+
+      next.onclick = nextImg;
+      prev.onclick = prevImg;
+      imgEl.onmouseenter = stopAutoPlay;
+      imgEl.onmouseleave = startAutoPlay;
+
+      update(); startAutoPlay();
+    })();
+
+    (function () {
+      const images = ["/centrodemesa1.JPG","/centrodemesa2.JPG"];
+      let i = 0, intervalId;
+      const imgEl = document.getElementById("centrodemesaImage");
+      const prev = document.getElementById("centrodemesaPrev");
+      const next = document.getElementById("centrodemesaNext");
+      const dots = document.getElementById("centrodemesaDots");
+
+      function renderDots() {
+        dots.innerHTML = "";
+        images.forEach((_, idx) => {
+          const b = document.createElement("button");
+          b.className = "h-2.5 w-2.5 rounded-full bg-white/80 hover:bg-white " + (idx === i ? "scale-110" : "opacity-60");
+          b.onclick = () => { i = idx; update(); };
+          dots.appendChild(b);
+        });
+      }
+      function update() { imgEl.src = images[i]; renderDots(); }
+      function nextImg() { i = (i + 1) % images.length; update(); }
+      function prevImg() { i = (i - 1 + images.length) % images.length; update(); }
+      function startAutoPlay() { intervalId = setInterval(nextImg, 4000); }
+      function stopAutoPlay() { clearInterval(intervalId); }
+
+      next.onclick = nextImg;
+      prev.onclick = prevImg;
+      imgEl.onmouseenter = stopAutoPlay;
+      imgEl.onmouseleave = startAutoPlay;
+
+      update(); startAutoPlay();
+    })();
+
+    (function () {
+      const images = ["/apariciontv1.jpg","/apariciontv2.JPG","/apariciontv3.JPG","/apariciontv4.JPG","/apariciontv5.JPG","/apariciontv6.JPG","/apariciontv7.JPG","/apariciontv8.JPG",];
+      let i = 0, intervalId;
+      const imgEl = document.getElementById("apariciontvImage");
+      const prev = document.getElementById("apariciontvPrev");
+      const next = document.getElementById("apariciontvNext");
+      const dots = document.getElementById("apariciontvDots");
+
+      function renderDots() {
+        dots.innerHTML = "";
+        images.forEach((_, idx) => {
+          const b = document.createElement("button");
+          b.className = "h-2.5 w-2.5 rounded-full bg-white/80 hover:bg-white " + (idx === i ? "scale-110" : "opacity-60");
+          b.onclick = () => { i = idx; update(); };
+          dots.appendChild(b);
+        });
+      }
+      function update() { imgEl.src = images[i]; renderDots(); }
+      function nextImg() { i = (i + 1) % images.length; update(); }
+      function prevImg() { i = (i - 1 + images.length) % images.length; update(); }
+      function startAutoPlay() { intervalId = setInterval(nextImg, 4000); }
+      function stopAutoPlay() { clearInterval(intervalId); }
+
+      next.onclick = nextImg;
+      prev.onclick = prevImg;
+      imgEl.onmouseenter = stopAutoPlay;
+      imgEl.onmouseleave = startAutoPlay;
+
+      update(); startAutoPlay();
+    })();
+
+    (function () {
+      const images = ["/arregloglobo1.jpg","/arregloglobo2.JPG","/arregloglobo3.JPG","/arregloglobo4.JPG"];
+      let i = 0, intervalId;
+      const imgEl = document.getElementById("arreglogloboImage");
+      const prev = document.getElementById("arreglogloboPrev");
+      const next = document.getElementById("arreglogloboNext");
+      const dots = document.getElementById("arreglobgloDots");
+
+      function renderDots() {
+        dots.innerHTML = "";
+        images.forEach((_, idx) => {
+          const b = document.createElement("button");
+          b.className = "h-2.5 w-2.5 rounded-full bg-white/80 hover:bg-white " + (idx === i ? "scale-110" : "opacity-60");
+          b.onclick = () => { i = idx; update(); };
+          dots.appendChild(b);
+        });
+      }
+      function update() { imgEl.src = images[i]; renderDots(); }
+      function nextImg() { i = (i + 1) % images.length; update(); }
+      function prevImg() { i = (i - 1 + images.length) % images.length; update(); }
+      function startAutoPlay() { intervalId = setInterval(nextImg, 4000); }
+      function stopAutoPlay() { clearInterval(intervalId); }
+
+      next.onclick = nextImg;
+      prev.onclick = prevImg;
+      imgEl.onmouseenter = stopAutoPlay;
+      imgEl.onmouseleave = startAutoPlay;
+
+      update(); startAutoPlay();
+    })();
+  </script>
+</body>
+</html>
