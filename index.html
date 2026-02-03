@@ -48,19 +48,36 @@
     nav ul li a {
       padding: 6px 12px;
       border-radius: 8px;
-      transition: .25s ease, color .25s ease, transform .15s ease;
+      transition: .25s ease, transform .15s ease, color .25s ease;
       background-color: rgba(248, 187, 24);
       color: rgb(0, 92, 185);
+      font-weight: 600;
       display: inline-block;
     }
     nav ul li a:hover {
       background-color: rgb(0, 92, 185);
-      color: rgb(1, 39, 76);
+      color: white;
       transform: translateY(-1px);
     }
     nav ul li a:active {
       transform: translateY(0);
       filter: brightness(0.97);
+    }
+
+    /* ===== SLOGAN PARTY ANIMATION ===== */
+    .sloganParty{
+      transform-origin: center;
+      animation: partyPop 1.9s ease-in-out infinite;
+      will-change: transform, filter;
+    }
+    @keyframes partyPop{
+      0%   { transform: translateY(0) scale(1) rotate(-0.3deg); filter: drop-shadow(0 0 0 rgba(250,204,21,0)); }
+      35%  { transform: translateY(-3px) scale(1.02) rotate(0.3deg); filter: drop-shadow(0 0 10px rgba(250,204,21,0.55)); }
+      70%  { transform: translateY(0) scale(1.00) rotate(-0.2deg); filter: drop-shadow(0 0 6px rgba(255,93,162,0.35)); }
+      100% { transform: translateY(0) scale(1) rotate(-0.3deg); filter: drop-shadow(0 0 0 rgba(250,204,21,0)); }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .sloganParty{ animation: none; }
     }
 
     /* ===== Mobile dropdown animation (fade + slide) ===== */
@@ -97,7 +114,7 @@
     }
 
     header { position: relative; z-index: 50; }
-    section { scroll-margin-top: 120px; }
+    section { scroll-margin-top: 140px; }
 
     /* Contact form small helpers */
     .form-label { display:block; font-weight:600; color: rgb(0,92,185); margin-bottom: 0.25rem; }
@@ -129,15 +146,23 @@
 <body class="font-sans">
   <div id="menuOverlay" class="md:hidden"></div>
 
-  <!-- Header -->
-  <header style="background-color: rgb(255, 255, 255);" class="p-4 shadow-md">
-    <div class="flex flex-col md:flex-row items-center md:justify-start gap-6 max-w-6xl mx-auto">
+  <!-- ===== HEADER CORREGIDO ===== -->
+  <header class="bg-white shadow-md p-4">
+    <div class="max-w-6xl mx-auto">
 
-      <img src="/LogoGDplain.PNG"
-           alt="Guaynabo Dulces Logo"
-           class="h-36 w-auto object-contain" />
+      <!-- Logo + Slogan -->
+      <div class="flex flex-col md:flex-row items-center md:items-end gap-4">
+        <img src="/LogoGDplain.PNG"
+             alt="Guaynabo Dulces Logo"
+             class="h-36 w-auto object-contain" />
 
-      <nav class="w-full md:w-auto">
+        <img src="/slogan-fiesta.svg"
+             alt="DE TODO PARA TU FIESTA"
+             class="sloganParty h-16 md:h-20 w-auto object-contain" />
+      </div>
+
+      <!-- Navbar debajo -->
+      <nav class="w-full mt-4">
 
         <div class="flex justify-center md:hidden">
           <button id="menuBtn"
@@ -309,10 +334,6 @@
               * Este formulario abre tu correo (no guarda mensajes en la web).
             </p>
 
-            <!--
-              Opción A (sin backend): mailto
-              - Abre el cliente de correo del usuario con el mensaje listo.
-            -->
             <form id="contactForm" class="mt-4 space-y-4">
               <div>
                 <label class="form-label" for="name">Nombre</label>
@@ -482,10 +503,10 @@
   </main>
 
   <!-- Footer -->
-  <footer style="background-color: rgb(0, 92, 185);" class="text-center p-6 mt-10 text-sm text-gray-700">
+  <footer style="background-color: rgb(0, 92, 185);" class="text-center p-6 mt-10 text-sm text-white">
     <p>&copy; 2026 Guaynabo Dulces. Todos los derechos reservados.</p>
     <p class="mt-2">¿Tienes preguntas? Escríbenos a:
-      <a href="mailto:info@guaynabodulces.com." class="underline">info@guaynabodulces.com</a>
+      <a href="mailto:info@guaynabodulces.com" class="underline">info@guaynabodulces.com</a>
     </p>
   </footer>
 
