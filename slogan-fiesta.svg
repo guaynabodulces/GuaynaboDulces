@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220">
+  <defs>
+    <!-- Sombra exterior -->
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Glow neón (base) -->
+    <filter id="neon" x="-40%" y="-60%" width="180%" height="220%">
+      <feGaussianBlur stdDeviation="3.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glow extra para "pulso" -->
+    <filter id="neonPulse" x="-50%" y="-90%" width="200%" height="280%">
+      <feGaussianBlur stdDeviation="6.5" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Brillito del globo -->
+    <radialGradient id="balloonShine" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Animaciones (funcionan dentro del SVG) -->
+  <style>
+    /* Flotar globos */
+    @keyframes float1 { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } }
+    @keyframes float2 { 0%,100%{ transform:
