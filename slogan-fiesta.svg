@@ -1,30 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="260" viewBox="0 0 1400 260">
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="360" viewBox="0 0 2000 360">
   <defs>
-    <!-- Match HTML colors -->
-    <!-- Blue: #005CB9 | Yellow: #FACC15 | Dark: #01274C | White: #FFFFFF -->
-
     <!-- Outer shadow -->
     <filter id="outerShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000000" flood-opacity="0.28"/>
     </filter>
 
     <!-- Neon border glow -->
     <filter id="borderGlow" x="-40%" y="-60%" width="180%" height="220%">
-      <feGaussianBlur stdDeviation="5.5" result="g"/>
+      <feGaussianBlur stdDeviation="7" result="g"/>
       <feMerge>
         <feMergeNode in="g"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- Soft inner glow for "lightbox" -->
-    <radialGradient id="panelGlow" cx="50%" cy="35%" r="85%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.22"/>
-      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+    <!-- Lightbox inner glow -->
+    <radialGradient id="panelGlow" cx="50%" cy="32%" r="88%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.24"/>
+      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0.09"/>
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Glass highlight sweep -->
+    <!-- Moving glass sweep -->
     <linearGradient id="glassSweep" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
       <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.18"/>
@@ -32,7 +29,7 @@
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Text front gradient (3D look) -->
+    <!-- Text gold gradient -->
     <linearGradient id="textGold" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFF6C7"/>
       <stop offset="35%" stop-color="#FACC15"/>
@@ -42,16 +39,16 @@
 
     <!-- Text glow -->
     <filter id="textNeon" x="-40%" y="-80%" width="180%" height="260%">
-      <feGaussianBlur stdDeviation="4.2" result="tblur"/>
+      <feGaussianBlur stdDeviation="4.8" result="tblur"/>
       <feMerge>
         <feMergeNode in="tblur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- Strong pulse glow -->
+    <!-- Pulse glow -->
     <filter id="textPulse" x="-60%" y="-120%" width="220%" height="340%">
-      <feGaussianBlur stdDeviation="7.2" result="pblur"/>
+      <feGaussianBlur stdDeviation="8.6" result="pblur"/>
       <feMerge>
         <feMergeNode in="pblur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -60,137 +57,104 @@
   </defs>
 
   <!-- ===== Lightbox frame ===== -->
-  <!-- Base white panel -->
-  <rect x="18" y="22" width="1364" height="216" rx="34"
+  <rect x="24" y="28" width="1952" height="304" rx="52"
         fill="#FFFFFF" filter="url(#outerShadow)"/>
 
-  <!-- Yellow border -->
-  <rect x="18" y="22" width="1364" height="216" rx="34"
-        fill="none" stroke="#FACC15" stroke-width="10" filter="url(#borderGlow)"/>
+  <rect x="24" y="28" width="1952" height="304" rx="52"
+        fill="none" stroke="#FACC15" stroke-width="12" filter="url(#borderGlow)"/>
 
-  <!-- Inner blue panel -->
-  <rect x="44" y="52" width="1312" height="156" rx="26"
+  <rect x="62" y="78" width="1876" height="204" rx="38"
         fill="#005CB9"/>
 
-  <!-- Lightbox inner glow -->
-  <rect x="44" y="52" width="1312" height="156" rx="26"
+  <rect x="62" y="78" width="1876" height="204" rx="38"
         fill="url(#panelGlow)"/>
 
-  <!-- Glass sweep moving highlight -->
-  <g opacity="0.85">
-    <rect x="-600" y="52" width="560" height="156" rx="26" fill="url(#glassSweep)">
-      <animate attributeName="x" values="-600; 1440" dur="3.6s" repeatCount="indefinite"/>
+  <!-- Glass sweep -->
+  <g opacity="0.9">
+    <rect x="-900" y="78" width="720" height="204" rx="38" fill="url(#glassSweep)">
+      <animate attributeName="x" values="-900; 2200" dur="3.4s" repeatCount="indefinite"/>
     </rect>
   </g>
 
-  <!-- Tiny sparkles (subtle) -->
+  <!-- Subtle sparkles -->
   <g opacity="0.55">
-    <circle cx="120" cy="92" r="4" fill="#FACC15"/>
-    <circle cx="160" cy="150" r="3" fill="#FFFFFF"/>
-    <circle cx="240" cy="110" r="3.5" fill="#FACC15"/>
-    <circle cx="1160" cy="92" r="4" fill="#FACC15"/>
-    <circle cx="1200" cy="150" r="3" fill="#FFFFFF"/>
-    <circle cx="1280" cy="110" r="3.5" fill="#FACC15"/>
+    <circle cx="170" cy="120" r="5" fill="#FACC15"/>
+    <circle cx="240" cy="220" r="4" fill="#FFFFFF"/>
+    <circle cx="360" cy="150" r="4.5" fill="#FACC15"/>
+
+    <circle cx="1640" cy="120" r="5" fill="#FACC15"/>
+    <circle cx="1710" cy="220" r="4" fill="#FFFFFF"/>
+    <circle cx="1830" cy="150" r="4.5" fill="#FACC15"/>
   </g>
 
   <!-- ===== 3D TEXT ===== -->
-  <!-- Extrusion stack (behind) -->
-  <!-- (multiple layers = 3D depth) -->
   <g transform="skewX(-7)">
-    <text x="700" y="138"
-          text-anchor="middle" dominant-baseline="middle"
+    <!-- Extrusion stack (depth) -->
+    <text x="1000" y="200" text-anchor="middle" dominant-baseline="middle"
           font-family="Impact, Haettenschweiler, 'Arial Black', 'Trebuchet MS', Arial, sans-serif"
-          font-size="78" font-weight="900" letter-spacing="2"
-          fill="#01274C"
-          textLength="1210" lengthAdjust="spacingAndGlyphs"
-          opacity="0.95">
+          font-size="110" font-weight="900" letter-spacing="2"
+          fill="#01274C" opacity="0.95"
+          textLength="1700" lengthAdjust="spacingAndGlyphs">
       DE TODO PARA TU FIESTA
     </text>
 
-    <text x="704" y="142"
-          text-anchor="middle" dominant-baseline="middle"
+    <text x="1008" y="208" text-anchor="middle" dominant-baseline="middle"
           font-family="Impact, Haettenschweiler, 'Arial Black', 'Trebuchet MS', Arial, sans-serif"
-          font-size="78" font-weight="900" letter-spacing="2"
-          fill="#01274C"
-          textLength="1210" lengthAdjust="spacingAndGlyphs"
-          opacity="0.80">
+          font-size="110" font-weight="900" letter-spacing="2"
+          fill="#01274C" opacity="0.75"
+          textLength="1700" lengthAdjust="spacingAndGlyphs">
       DE TODO PARA TU FIESTA
     </text>
 
-    <text x="708" y="146"
-          text-anchor="middle" dominant-baseline="middle"
+    <text x="1016" y="216" text-anchor="middle" dominant-baseline="middle"
           font-family="Impact, Haettenschweiler, 'Arial Black', 'Trebuchet MS', Arial, sans-serif"
-          font-size="78" font-weight="900" letter-spacing="2"
-          fill="#01274C"
-          textLength="1210" lengthAdjust="spacingAndGlyphs"
-          opacity="0.65">
+          font-size="110" font-weight="900" letter-spacing="2"
+          fill="#01274C" opacity="0.55"
+          textLength="1700" lengthAdjust="spacingAndGlyphs">
       DE TODO PARA TU FIESTA
     </text>
 
-    <text x="712" y="150"
-          text-anchor="middle" dominant-baseline="middle"
+    <text x="1024" y="224" text-anchor="middle" dominant-baseline="middle"
           font-family="Impact, Haettenschweiler, 'Arial Black', 'Trebuchet MS', Arial, sans-serif"
-          font-size="78" font-weight="900" letter-spacing="2"
-          fill="#01274C"
-          textLength="1210" lengthAdjust="spacingAndGlyphs"
-          opacity="0.50">
+          font-size="110" font-weight="900" letter-spacing="2"
+          fill="#01274C" opacity="0.40"
+          textLength="1700" lengthAdjust="spacingAndGlyphs">
       DE TODO PARA TU FIESTA
     </text>
-  </g>
 
-  <!-- Glow pulse layer -->
-  <g transform="skewX(-7)">
-    <text x="700" y="132"
-          text-anchor="middle" dominant-baseline="middle"
+    <!-- Pulse glow -->
+    <text x="1000" y="192" text-anchor="middle" dominant-baseline="middle"
           font-family="Impact, Haettenschweiler, 'Arial Black', 'Trebuchet MS', Arial, sans-serif"
-          font-size="78" font-weight="900" letter-spacing="2"
-          fill="#FACC15"
-          stroke="#FFFFFF" stroke-width="10"
+          font-size="110" font-weight="900" letter-spacing="2"
+          fill="#FACC15" stroke="#FFFFFF" stroke-width="12"
+          paint-order="stroke" filter="url(#textPulse)" opacity="0.55"
+          textLength="1700" lengthAdjust="spacingAndGlyphs">
+      <animate attributeName="opacity" values="0.35;0.92;0.35" dur="1.8s" repeatCount="indefinite"/>
+      DE TODO PARA TU FIESTA
+    </text>
+
+    <!-- Front face -->
+    <text x="1000" y="192" text-anchor="middle" dominant-baseline="middle"
+          font-family="Impact, Haettenschweiler, 'Arial Black', 'Trebuchet MS', Arial, sans-serif"
+          font-size="110" font-weight="900" letter-spacing="2"
+          fill="url(#textGold)" stroke="#FFFFFF" stroke-width="9"
+          paint-order="stroke" filter="url(#textNeon)"
+          textLength="1700" lengthAdjust="spacingAndGlyphs">
+      DE TODO PARA TU FIESTA
+    </text>
+
+    <!-- Crisp dark outline -->
+    <text x="1000" y="192" text-anchor="middle" dominant-baseline="middle"
+          font-family="Impact, Haettenschweiler, 'Arial Black', 'Trebuchet MS', Arial, sans-serif"
+          font-size="110" font-weight="900" letter-spacing="2"
+          fill="url(#textGold)" stroke="#01274C" stroke-width="5"
           paint-order="stroke"
-          filter="url(#textPulse)"
-          textLength="1210" lengthAdjust="spacingAndGlyphs"
-          opacity="0.55">
-      <animate attributeName="opacity" values="0.35;0.90;0.35" dur="1.9s" repeatCount="indefinite"/>
-      DE TODO PARA TU FIESTA
-    </text>
-  </g>
-
-  <!-- Main front face (3D impact) -->
-  <g transform="skewX(-7)">
-    <text x="700" y="132"
-          text-anchor="middle" dominant-baseline="middle"
-          font-family="Impact, Haettenschweiler, 'Arial Black', 'Trebuchet MS', Arial, sans-serif"
-          font-size="78" font-weight="900" letter-spacing="2"
-          fill="url(#textGold)"
-          stroke="#FFFFFF" stroke-width="8"
-          paint-order="stroke"
-          filter="url(#textNeon)"
-          textLength="1210" lengthAdjust="spacingAndGlyphs">
+          textLength="1700" lengthAdjust="spacingAndGlyphs">
       DE TODO PARA TU FIESTA
     </text>
 
-    <!-- Dark crisp outline to match site -->
-    <text x="700" y="132"
-          text-anchor="middle" dominant-baseline="middle"
-          font-family="Impact, Haettenschweiler, 'Arial Black', 'Trebuchet MS', Arial, sans-serif"
-          font-size="78" font-weight="900" letter-spacing="2"
-          fill="url(#textGold)"
-          stroke="#01274C" stroke-width="4"
-          paint-order="stroke"
-          textLength="1210" lengthAdjust="spacingAndGlyphs">
-      DE TODO PARA TU FIESTA
-    </text>
+    <!-- Top highlight -->
+    <text x="1000" y="186" text-anchor="middle" dominant-baseline="middle"
+          font-family="Impact,
 
-    <!-- Top highlight (fake 3D shine) -->
-    <text x="700" y="128"
-          text-anchor="middle" dominant-baseline="middle"
-          font-family="Impact, Haettenschweiler, 'Arial Black', 'Trebuchet MS', Arial, sans-serif"
-          font-size="78" font-weight="900" letter-spacing="2"
-          fill="#FFFFFF"
-          opacity="0.18"
-          textLength="1210" lengthAdjust="spacingAndGlyphs">
-      DE TODO PARA TU FIESTA
-    </text>
-  </g>
-</svg>
 
