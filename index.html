@@ -10,13 +10,10 @@
     h1 {
       font-size: 1.875rem;
       font-weight: bold;
-      color: rgb(250, 204, 21);
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      background-color: rgb(0, 92, 185);
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      border-radius: 0.25rem;
+      color: rgb(0, 92, 185); /* Azul marca */
+      background: transparent;
+      border: none;
+      margin-bottom: 0.5rem;
     }
     h2 {
       font-size: 1.5rem;
@@ -29,14 +26,10 @@
       border-radius: 0.25rem;
     }
     h4 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: rgb(0, 92, 185);
-      margin-bottom: 0.75rem;
-      background-color: white;
-      padding: 0.25rem 0.5rem;
-      border-left: 4px solid rgb(250, 204, 21);
-      border-radius: 0.25rem;
+     h4 {
+      color: #555;
+      margin-bottom: 1rem;
+    }
     }
     @media (max-width: 640px) {
       h1 { font-size: 1.5rem; }
@@ -147,11 +140,14 @@
   <div id="menuOverlay" class="md:hidden"></div>
 
   <!-- ===== HEADER ===== -->
-  <header class="relative w-full overflow-hidden shadow-md" style="background-color:#005CB9;">
+ <header class="w-full" style="background-color:#005CB9;">
   <!-- Background image -->
   <div class="absolute inset-0">
-    <img src="./guaynabodulcesbanner.JPG" alt="Guaynabo Dulces - Banner"
-         class="w-full h-full object-cover" />
+    <img 
+      src="/guaynabodulcesbanner.jpg"
+      alt="Guaynabo Dulces Banner"
+      class="w-full h-auto object-contain"
+    />
 
     <!-- Overlay para que el texto se lea-->
     <div class="absolute inset-0"
